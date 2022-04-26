@@ -1,0 +1,76 @@
+<div class="post">
+  <div class="postWrapper">
+    <div class="postTop">
+      <div class="postTopLeft">
+        <div *ngIf="user">
+          <div *ngIf="user.profilePicture">
+            <img
+              class="postProfileImg"
+              src="{{ user.profilePicture }}"
+              alt="profile pic"
+            />
+          </div>
+        </div>
+        <div *ngIf="user">
+          <div *ngIf="!user.profilePicture">
+            <img
+              class="postProfileImg"
+              src="/assets/avatar.jpeg"
+              alt="profile pic"
+            />
+          </div>
+        </div>
+        <span class="postUsername">{{ userNameOfAPost }}</span>
+        <span class="postDate"></span>
+      </div>
+      <div class="postTopRight">
+        <div *ngIf="isCurrentUserProfile">
+          <i
+            class="bi bi-pencil-square postEditIcon"
+            (click)="openEditPostDialog()"
+          ></i>
+          <i
+            class="bi bi-trash-fill postTopRightIcon"
+            mat-raised-button
+            (click)="openDialog()"
+          ></i>
+        </div>
+      </div>
+    </div>
+    <div class="postCenter">
+      <span class="postText">
+        {{ post.desc }}
+      </span>
+      <img
+        *ngIf="post.img"
+        class="postImg"
+        src="{{ post.img }}"
+        alt="post image"
+      />
+    </div>
+    <div class="postBottom">
+      <div class="postBottomLeft">
+        <div *ngIf="isCurrentUserLiked">
+          <img
+            class="alreadylikedIcon"
+            src="/assets/like.png"
+            alt="like"
+            (click)="likeordislike()"
+          />
+        </div>
+        <div *ngIf="!isCurrentUserLiked">
+          <img
+            class="likeIcon"
+            src="/assets/like.png"
+            alt="like"
+            (click)="likeordislike()"
+          />
+        </div>
+        <span class="postLikeCounter">{{ noOfLikes }} people liked it</span>
+      </div>
+      <div class="postBottomRight">
+        <span class="postCommentText"> </span>
+      </div>
+    </div>
+  </div>
+</div>

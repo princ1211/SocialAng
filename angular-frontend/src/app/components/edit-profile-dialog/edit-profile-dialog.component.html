@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Hi {{ username }} Edit Profile</h2>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>User Name</mat-label>
+    <input matInput [(ngModel)]="username" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="email" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input matInput [(ngModel)]="desc" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>City</mat-label>
+    <input matInput [(ngModel)]="city" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Relationship Status</mat-label>
+    <input matInput [(ngModel)]="relationship" />
+  </mat-form-field>
+</div>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="saveData()">Save</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

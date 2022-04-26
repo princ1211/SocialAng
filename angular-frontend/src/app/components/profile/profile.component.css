@@ -1,0 +1,107 @@
+.leftbar {
+  flex: 2.5;
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(250, 245, 245);
+}
+::-webkit-scrollbar-thumb {
+  width: 2px;
+}
+.leftbarWrapper {
+  padding: 20px;
+}
+.feed {
+  flex: 6.5;
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+}
+
+.feedWrapper {
+  padding: 20px;
+}
+
+.rightbar {
+  flex: 3;
+}
+
+.rightbarWrapper {
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+}
+.profileRight {
+  flex: 9;
+}
+
+.profileRightBottom {
+  display: flex;
+}
+
+.profileCover {
+  height: 450px;
+  position: relative;
+}
+
+.profileCoverImg {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+}
+.profileUserImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 230px;
+  cursor: pointer;
+}
+.profileInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.profileInfoName {
+  font-size: 24px;
+}
+.profileFollowButton {
+  width: 150px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  background-color: #1d76eb;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: transparent;
+}
+.uploadProfileContainer:hover .overlay {
+  opacity: 1;
+}
+.profileInfo {
+  padding: 5px;
+  font-weight: 400;
+  font-size: 15px;
+}

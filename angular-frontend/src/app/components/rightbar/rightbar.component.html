@@ -1,0 +1,25 @@
+<div class="suggestedGroupsContainer">
+  <span class="suggestedGroupsText"> Suggested </span>
+</div>
+<br />
+<img
+  class="suggestedGroupsImg"
+  src="/assets/suggestedgroups.png"
+  alt="Suggested groups"
+/>
+<br />
+<br />
+<span class="suggestedGroupsText"> People You May Know </span>
+<ul class="rightbarPeopleYouMayKnow">
+  <div *ngFor="let person of peopleYouMayKnow">
+    <li class="rightbarPersonYouMayKnow" (click)="seeProfile(person)">
+      <div *ngIf="person.profilePicture">
+        <img class="rightbarPersonProfile" src="{{ person.profilePicture }}" />
+      </div>
+      <div *ngIf="!person.profilePicture">
+        <img class="rightbarPersonProfile" src="/assets/avatar.jpeg" />
+      </div>
+      <span class="rightbarPersonName">{{ person.username }}</span>
+    </li>
+  </div>
+</ul>

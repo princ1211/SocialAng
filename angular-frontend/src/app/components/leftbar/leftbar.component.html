@@ -1,0 +1,57 @@
+<ul class="leftbarList">
+  <li class="leftbarListItem">
+    <i class="bi bi-rss-fill leftbarIcon"></i>
+    <span class="leftbarListItemText">Feed</span>
+  </li>
+  <li class="leftbarListItem">
+    <i class="bi bi-chat-left-dots-fill leftbarIcon"></i>
+    <span class="leftbarListItemText">Chat</span>
+  </li>
+  <li class="leftbarListItem">
+    <i class="bi bi-camera-reels-fill leftbarIcon"></i>
+    <span class="leftbarListItemText">Reels</span>
+  </li>
+  <li class="leftbarListItem">
+    <i class="bi bi-people-fill leftbarIcon"></i>
+    <span class="leftbarListItemText">Groups</span>
+  </li>
+  <li class="leftbarListItem">
+    <i class="bi bi-bookmark-fill leftbarIcon"></i>
+    <span class="leftbarListItemText">Bookmarks</span>
+  </li>
+  <li class="leftbarListItem">
+    <i class="bi bi-question-circle-fill leftbarIcon"></i>
+    <span class="leftbarListItemText">Help and support</span>
+  </li>
+  <li class="leftbarListItem">
+    <i class="bi bi-gear-fill leftbarIcon"></i>
+    <span class="leftbarListItemText">Settings</span>
+  </li>
+  <li class="leftbarListItem">
+    <i class="bi bi-calendar-event-fill leftbarIcon"></i>
+    <span class="leftbarListItemText">Events</span>
+  </li>
+  <li class="leftbarListItem">
+    <i class="bi bi-controller leftbarIcon"></i>
+    <span class="leftbarListItemText">Gaming</span>
+  </li>
+</ul>
+<button class="leftbarButton">Show More</button>
+<hr class="leftbarHr" />
+<span></span>
+<span class="suggestedGroupsText"> Your Friends </span>
+<br />
+<br />
+<ul class="leftbarFriendList">
+  <div *ngFor="let friend of friends">
+    <li class="leftbarFriend" (click)="seeProfile(friend._id)">
+      <div *ngIf="friend.profilePicture">
+        <img class="leftbarFriendImg" src="{{ friend.profilePicture }}" />
+      </div>
+      <div *ngIf="!friend.profilePicture">
+        <img class="leftbarFriendImg" src="/assets/avatar.jpeg" />
+      </div>
+      <span class="leftbarFriendName">{{ friend.username }}</span>
+    </li>
+  </div>
+</ul>

@@ -1,0 +1,32 @@
+<div id="login-box">
+  <div class="left">
+    <form (submit)="onSubmit()">
+      <h1>Sign up</h1>
+      <br />
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        [(ngModel)]="username"
+      />
+      <input type="text" name="email" placeholder="Email" [(ngModel)]="email" />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+
+      <input type="submit" name="signup_submit" value="Sign up" /> <br />
+    </form>
+  </div>
+
+  <!-- <div class="right">
+      <span class="loginwith">Sign in with<br />social network</span>
+      
+      <button class="social-signin facebook">Log in with facebook</button>
+      <button class="social-signin twitter">Log in with Twitter</button>
+      <button class="social-signin google">Log in with Google+</button>
+    </div> -->
+  <!-- <div class="or">OR</div> -->
+</div>

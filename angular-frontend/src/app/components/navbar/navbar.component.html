@@ -1,0 +1,65 @@
+<div class="navbarContainer">
+  <div class="navbarLeft">
+    <a routerLink="" routerLinkActive="active" style="text-decoration: none">
+      <div class="logo">social media</div>
+    </a>
+  </div>
+  <div class="navbarCenter">
+    <div class="searchbar" *ngIf="!authService.isTokenExpired()">
+      <i class="bi bi-search searchIcon"></i>
+      <input placeholder="Search for friends" class="searchInput" />
+    </div>
+  </div>
+  <div class="navbarRight">
+    <div *ngIf="!authService.isTokenExpired()" class="navbarIcons">
+      
+      <a routerLink="" routerLinkActive="active">
+        <div class="navbarIconItem">
+          <i class="bi bi-house"></i>
+        </div>
+      </a>
+      <a>
+        <div class="navbarIconItem" (click)="onLogout()">
+          <i class="bi bi-box-arrow-left"></i>
+        </div>
+      </a>
+    </div>
+    <div class="navbarLinks">
+      <a
+        *ngIf="authService.isTokenExpired()"
+        routerLink="/login"
+        routerLinkActive="active"
+      >
+        <span class="navbarLink">Login</span>
+      </a>
+      <a
+        *ngIf="authService.isTokenExpired()"
+        routerLink="/register"
+        routerLinkActive="active"
+      >
+        <span class="navbarLink">Register</span>
+      </a>
+    </div>
+
+    <a *ngIf="!authService.isTokenExpired()">
+      <div *ngIf="user">
+        <div *ngIf="user.profilePicture">
+          <img
+            src="{{ user.profilePicture }}"
+            alt="profile"
+            class="navbarImg"
+            (click)="currentUserProfile()"
+          />
+        </div>
+        <div *ngIf="!user.profilePicture">
+          <img
+            src="assets/avatar.jpeg"
+            alt="profile"
+            class="navbarImg"
+            (click)="currentUserProfile()"
+          />
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

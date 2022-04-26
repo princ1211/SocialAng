@@ -1,0 +1,106 @@
+<div class="profile">
+  <div class="leftbar">
+    <div class="leftbarWrapper">
+      <app-leftbar></app-leftbar>
+    </div>
+  </div>
+  <div class="profileRight">
+    <div class="profileRightTop">
+      <div class="profileCover">
+        <img
+          src="/assets/coverpic.png"
+          alt="cover photo"
+          class="profileCoverImg"
+        />
+        <!-- not current user should not have acess to add profile picture -->
+        <div *ngIf="user">
+          <div *ngIf="!isCurrentUserProfile">
+            <div *ngIf="user.profilePicture">
+              <img
+                src="{{ user.profilePicture }}"
+                alt="cover photo"
+                class="profileUserImg"
+                alt=""
+              />
+            </div>
+            <div *ngIf="!user.profilePicture">
+              <img
+                src="/assets/uploadprofile.jpeg"
+                alt="cover photo"
+                class="profileUserImg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- current user can have access to profile picture -->
+        <div *ngIf="user">
+          <div *ngIf="isCurrentUserProfile">
+            <label for="picture">
+              <div *ngIf="user.profilePicture">
+                <img
+                  src="{{ user.profilePicture }}"
+                  alt="cover photo"
+                  class="profileUserImg"
+                  alt=""
+                />
+              </div>
+              <div *ngIf="!user.profilePicture">
+                <img
+                  src="/assets/uploadprofile.jpeg"
+                  alt="cover photo"
+                  class="profileUserImg"
+                  alt=""
+                />
+              </div>
+            </label>
+            <input
+              type="file"
+              name="profilePicture"
+              id="picture"
+              style="display: none"
+              (change)="onProfilePicUpload($event)"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="profileInfo">
+        <h2 *ngIf="user" class="profileInfoName">{{ user.username }}</h2>
+        <button *ngIf="!isCurrentUserProfile" class="profileFollowButton">
+          <div *ngIf="isFollowing" (click)="unfollow()">UnFollow</div>
+          <div *ngIf="!isFollowing" (click)="follow()">Follow</div>
+        </button>
+        <span class="profileInfo" *ngIf="user">
+          <p *ngIf="user.email">Email :{{ user.email }}</p>
+          <p *ngIf="user.desc">Description : {{ user.desc }}</p>
+          <p *ngIf="user.city">City: {{ user.city }}</p>
+          <p *ngIf="user.from">From: {{ user.from }}</p>
+          <p *ngIf="user.relationship">
+            Relationship status: {{ user.relationship }}
+          </p>
+        </span>
+        <button
+          *ngIf="isCurrentUserProfile"
+          class="profileFollowButton"
+          mat-raised-button
+          (click)="openDialog()"
+        >
+          Edit Profile
+        </button>
+      </div>
+    </div>
+    <div class="profileRightBottom">
+      <div class="feed">
+        <div class="feedWrapper">
+          <app-feed></app-feed>
+        </div>
+      </div>
+      <!-- <div class="rightbar">
+           <div class="rightbarWrapper">
+             <app-rightbar></app-rightbar>
+           </div>
+         </div> -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<!-- share post starts here -->
+<form (submit)="submitPost()">
+  <div class="share">
+    <div class="shareWrapper">
+      <div class="shareTop">
+        <div *ngIf="currentUser">
+          <div *ngIf="currentUser.profilePicture">
+            <img
+              class="shareProfileImg"
+              src="{{ currentUser.profilePicture }}"
+              alt="profile pic"
+            />
+          </div>
+          <div *ngIf="!currentUser.profilePicture">
+            <img
+              class="shareProfileImg"
+              src="/assets/avatar.jpeg"
+              alt="profile pic"
+            />
+          </div>
+        </div>
+        <input
+          type="text"
+          placeholder="What's in your mind?"
+          class="shareInput"
+          name="desc"
+          (change)="postData($event)"
+        />
+      </div>
+      <hr class="shareHr" />
+      <div class="shareBottom">
+        <div class="shareOptions">
+          <div class="shareOption">
+            <i style="color: tomato" class="bi bi-images shareIcon"></i>
+            <div>
+              <span class="shareOptionText"
+                ><label for="picture" style="cursor: pointer"
+                  >Add A Picture</label
+                ></span
+              >
+              <input
+                type="file"
+                name="postImage"
+                id="picture"
+                style="display: none"
+                (change)="onPictureUpload($event)"
+              />
+            </div>
+          </div>
+          <div class="shareOption">
+            <i style="color: green" class="bi bi-geo-alt-fill shareIcon"></i>
+            <span class="shareOptionText">location</span>
+          </div>
+          <div class="shareOption">
+            <i
+              style="color: goldenrod"
+              class="bi bi-emoji-smile-fill shareIcon"
+            ></i>
+            <span class="shareOptionText">feelings</span>
+          </div>
+        </div>
+        <button class="shareButton" type="submit">Share</button>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- share post ends -->
+
+<!-- posts starts -->
+<div *ngFor="let post of posts">
+  <app-post [post]="post" (refreshFeed)="fetchUserFeed()"></app-post>
+</div>
+<!-- posts ends here -->

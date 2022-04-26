@@ -1,0 +1,89 @@
+.post {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin: 30px 0;
+}
+.postWrapper {
+  padding: 10px;
+}
+.postTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.postTopLeft {
+  display: flex;
+  align-items: center;
+}
+.postProfileImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.postUsername {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+.postDate {
+  font-size: 13px;
+}
+
+.postCenter {
+  margin: 20px 0;
+}
+
+.postImg {
+  margin-top: 20px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+.postBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.postBottomLeft {
+  display: flex;
+  align-items: center;
+}
+
+.likeIcon {
+  width: 60px;
+  height: 50px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.postTopRightIcon {
+  padding-right: 10px;
+  cursor: pointer;
+  color: tomato;
+}
+.postEditIcon{
+    padding-right: 10px;
+    cursor: pointer;
+}
+.postText {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 15px 0;
+  color: #464444;
+}
+
+.postLikeCounter {
+  font-size: 15px;
+}
+.postCommentText {
+  cursor: pointer;
+  font-size: 15px;
+}
+.alreadylikedIcon {
+  width: 60px;
+  height: 50px;
+  margin-right: 5px;
+  cursor: pointer;
+  opacity: 0.2;
+}
