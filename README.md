@@ -6,5 +6,5 @@ Social Media Web Application built using MEAN Stack
 2. <a href="https://github.com/somanyadav">Soman Yadav</a> 
 3. <a href="https://github.com/dikshadutt08">Diksha Dutt</a> 
 4. <a href="https://github.com/mahakfaheem">Mahak Faheem</a> 
-5. <a href="https://github.com/SiddheshShinde-tech">Siddhesh Shinde</a> 
+5. <a href="https://github.com/SiddheshShinde-tech">Siddhesh Shinde</a>  
 
