@@ -1,5 +1,5 @@
 # SocialMe
-Social Media Web Application built using MEAN Stack
+Social Media Web Application built using MEAN Stack.It has features to create and upload a post, make or add friends and comment and see other's post.
 
 ## 🏆 Team Members
 1. <a href="https://github.com/princ1211">Prince Jain</a> 
